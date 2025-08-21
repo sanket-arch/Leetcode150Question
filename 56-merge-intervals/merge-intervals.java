@@ -1,11 +1,15 @@
 class Solution {
     public int[][] merge(int[][] intervals) {
-       ArrayList<int[]> mergedInterval = new ArrayList<>();
-        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        if(intervals.length == 1){
+            return intervals;
+        }
+        ArrayList<int[]> mergedInterval = new ArrayList<>();
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0])); // it will take O(n)
 
         int start = intervals[0][0];
         int end = intervals[0][1];
         int n = intervals.length;
+        //O(n)
         for(int i=1;i<n;i++){
             int firstElement = intervals[i][0];
             int lastElement = intervals[i][1];
