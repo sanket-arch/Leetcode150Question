@@ -1,7 +1,7 @@
 class Solution {
     public void rotate(int[] arr, int k) {
         int size = arr.length;
-        k = k % size;
+        k = k % size; // this handles when 
         reverseArray(arr,0,size - k-1);
         reverseArray(arr,size-k,size-1);
         reverseArray(arr,0,size-1);
